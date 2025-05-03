@@ -8,15 +8,57 @@ function validateLogin() {
     return false;
   }
 
-  // Example validation
   if (!email.includes("@")) {
     alert("Enter a valid email.");
+    return false;
+  }
+
+  if (password.length < 6) {
+    alert("Password must be at least 6 characters long.");
     return false;
   }
 
   alert("Login successful");
   return true;
 }
+
+function validateRegister() {
+  const name = document.getElementById("registerName").value.trim();
+  const email = document.getElementById("registerEmail").value.trim();
+  const password = document.getElementById("registerPassword").value;
+  const confirmPassword = document.getElementById("registerConfirmPassword").value;
+
+  const nameRegex = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/; // At least two words, letters only
+
+  if (!name || !email || !password || !confirmPassword) {
+    alert("All fields are required.");
+    return false;
+  }
+
+  if (!nameRegex.test(name)) {
+    alert("Please enter your full name (first and last name, letters only).");
+    return false;
+  }
+
+  if (!email.includes("@")) {
+    alert("Enter a valid email address.");
+    return false;
+  }
+
+  if (password.length < 6) {
+    alert("Password must be at least 6 characters long.");
+    return false;
+  }
+
+  if (password !== confirmPassword) {
+    alert("Passwords do not match.");
+    return false;
+  }
+
+  alert("Registration successful!");
+  return true;
+}
+
 
 // Initialize carousels with custom options
 document.addEventListener('DOMContentLoaded', function() {
