@@ -37,17 +37,7 @@ body {
   padding: 120px 0;
   position: relative;
   overflow: hidden;
-}
-
-.hero-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('images/pattern.png');
-  opacity: 0.1;
+  
 }
 
 .btn-primary {
@@ -60,8 +50,26 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: #ff5252;
+  background-color: #ff5252 !important;
   transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  color: white !important;
+}
+
+.btn-outline-primary {
+  border: var(--accent-color) solid 1px !important;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-weight: 600;
+  background-color: transparent;
+  color: var(--accent-color) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #ff5252 !important;
+  color: white !important;
+  transform: translateY(-3px);
+  border: #ff5252 solid 1px !important;
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
@@ -69,6 +77,10 @@ body {
   border-radius: 30px;
   padding: 12px 30px;
   font-weight: 600;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
 }
 
 .card {
@@ -153,7 +165,7 @@ body {
   position: absolute;
   left: 0;
   bottom: -10px;
-  width: 60px;
+  width: 270px;
   height: 4px;
   background-color: var(--accent-color);
 }

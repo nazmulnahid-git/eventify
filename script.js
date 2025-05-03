@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 const navSection = document.getElementById('navBar');
+const currentPage = window.location.pathname.split("/").pop();
+
 navSection.innerHTML = `
   <div class="container">
     <a class="navbar-brand" href="index.html">Eventify</a>
@@ -36,11 +38,11 @@ navSection.innerHTML = `
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        <li class="nav-item"><a class="nav-link ${currentPage === 'index.html' ? 'active' : ''}" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link ${currentPage === 'about.html' ? 'active' : ''}" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link ${currentPage === 'services.html' ? 'active' : ''}" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link ${currentPage === 'contact.html' ? 'active' : ''}" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-outline-primary ms-2 px-3" href="login.html">Login</a></li>
         <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-2 px-3" href="register.html">Register</a></li>
       </ul>
     </div>
